@@ -1,0 +1,10 @@
+/* Set LoanCutOffDate to yesterday's date. */
+
+const yesterday = new Date ();
+yesterday.setDate(yesterday.getDate() - 1);
+
+function formatDate(date) {
+return date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+}
+
+los.SetField( "ExtendedFields.SecondaryLoanCutoffDate", (formatDate(yesterday)) );
