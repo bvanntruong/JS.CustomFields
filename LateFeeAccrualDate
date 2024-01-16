@@ -1,0 +1,29 @@
+/* Late Fee Accrual Date (EXTENDED FIELD) */
+// Set date to the 15th of next month.
+
+var date = new Date();
+var today = date.getDate();
+
+function formatDate(date){
+ return date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+ };
+
+date.setDate(15);
+date.setMonth(date.getMonth()+1);
+
+formatDate(date);
+
+
+
+
+/* UNUSED CODE FOR LATER USE PURPOSES 
+
+if (today >= 15){
+ date.setMonth(date.getMonth()+2);
+ }
+else if (today < 15){
+ date.setMonth(date.getMonth()+1);
+ }
+
+
+*/
