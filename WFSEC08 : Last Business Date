@@ -1,0 +1,26 @@
+/* Set LoanCutOffDate to the last business date. */
+
+const yesterday = new Date();
+var day = yesterday.getDay();
+
+// If today is Sunday 0, minus 2 to get Friday.
+// If today is Monday 1, minus 3 to get Friday.
+// If today is Tues 2 through Saturday 6, minus 1 to get yesterday.
+// Holidays are auto programmed in a separate section on the BYTE LOS.
+
+
+if (day==0) {
+ yesterday.setDate(yesterday.getDate() - 2) 
+ }
+else if (day==1) {
+ yesterday.setDate(yesterday.getDate() - 3) 
+ }
+else if (day <= 2) {
+  yesterday.setDate(yesterday.getDate() - 1) 
+ }
+
+function formatDate(date) {
+return date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+}
+
+los.SetField( "ExtendedFields.SecondaryLoanCutoffDate", (formatDate(yesterday)) );
