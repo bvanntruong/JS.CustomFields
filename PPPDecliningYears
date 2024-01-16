@@ -1,0 +1,14 @@
+/* PPP_Declining_Year1 - Extended Field */
+
+/* Revising to include mapping from prepayment penalty type to Tier Year 1 so it’ll map to DocMagic interface. */
+
+if ([ExtendedFields.PrepayPenaltyType] == "Declining" && [Loan.PrepayPenaltyTerm] >= 12)
+  5
+else if ([ExtendedFields.PrepayPenaltyType] == "5% Fixed")
+  5
+else if ([ExtendedFields.PrepayPenaltyType] == "3% Fixed")
+  3
+else if ([ExtendedFields.PrepayPenaltyType] == "1% Fixed")
+  1
+else
+  ;
