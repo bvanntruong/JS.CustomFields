@@ -1,0 +1,13 @@
+/* Create field that will display the date of 5 days from today. */
+
+var today = new Date();
+var todayPlus5 = today;
+todayPlus5.setDate(today.getDate() + 5);
+todayPlus5.toDateString();
+
+function formatDate(date) {
+return date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+}
+
+formatDate(todayPlus5)
+
