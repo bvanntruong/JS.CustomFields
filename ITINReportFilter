@@ -1,0 +1,10 @@
+/* ITINProgam - Filtering for ITIN program only (EXTENDED FIELD - Calculated Field, using only for specific report) */
+
+var ITIN = [Loan.LoanProgramName];
+
+if (ITIN.match("ITIN") != null){
+ ITIN
+ }
+else ""
+
+
