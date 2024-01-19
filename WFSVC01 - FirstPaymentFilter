@@ -1,0 +1,21 @@
+/* WFSVC01 : First Payment Date Filter
+    Svc_FirstPaymentDate field */
+
+// Filter for files with a First Payment Date on or before the 1st of next month
+
+var date = new Date();
+var today = date.getDate();
+
+function formatDate(date){
+ return date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+ };
+
+date.setDate(1);
+date.setMonth(date.getMonth()+1);
+
+if ( (los.GetField("Loan.FirstPaymentDate")) <= date ){
+ los.SetField( "ExtendedFields.Svc_FirstPaymentDate", formatDate(date) )
+ }
+
+
+
